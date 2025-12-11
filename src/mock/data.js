@@ -8,7 +8,8 @@ export const mockData = {
       { label: "Home", href: "#home" },
       { label: "Sample Page", href: "#sample" }
     ],
-    ctaButton: "Book Your First Session — No Cost!"
+    ctaButton: "Book Your First Session — No Cost!",
+    logButton: "Log In"
   },
   hero: {
     badge: "Experienced Therapists",

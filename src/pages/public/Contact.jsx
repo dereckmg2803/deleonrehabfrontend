@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { useToast } from '../hooks/use-toast';
+import { Button } from '../../components/ui/button';
+import { useToast } from '../../hooks/use-toast';
 
 const Contact = () => {
   const { toast } = useToast();

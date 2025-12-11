@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
-import { Button } from '../components/ui/button';
+import { Button } from '../../components/ui/button';
 
 const Blog = () => {
   const blogPosts = [
@@ -106,7 +106,7 @@ const Blog = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="space-y-3">
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-1">
@@ -118,15 +118,15 @@ const Blog = () => {
                       <span>{post.author}</span>
                     </div>
                   </div>
-                  
+
                   <h2 className="text-2xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors duration-200">
                     {post.title}
                   </h2>
-                  
+
                   <p className="text-gray-600 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between pt-2">
                     <span className="text-sm text-gray-500">{post.readTime}</span>
                     <Button

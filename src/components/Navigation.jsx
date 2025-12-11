@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { mockData } from '../mock/data';
 
 const Navigation = () => {
-  const { logo, ctaButton } = mockData.navigation;
+  const { logo, ctaButton, logButton } = mockData.navigation;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -72,14 +72,24 @@ const Navigation = () => {
             ))}
 
           </div>
+          <div className="hidden md:flex items-center space-x-2">
+            {/* Desktop CTA Button */}
+            <Button
+              onClick={handleBookingClick}
+              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-200"
+            >
+              {ctaButton}
+            </Button>
 
-          {/* Desktop CTA Button */}
-          <Button
-            onClick={handleBookingClick}
-            className="hidden md:block bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-200"
-          >
-            {ctaButton}
-          </Button>
+            {/* Desktop Login Button */}
+            <Button
+              onClick={() => goToPage('/login')}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-2.5 rounded-md font-medium transition-colors duration-200"
+            >
+              {logButton}
+            </Button>
+          </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -100,8 +110,8 @@ const Navigation = () => {
                 key={index}
                 onClick={() => goToPage(item.path)}
                 className={`block w-full text-left px-4 py-3 rounded-md font-medium transition-colors duration-200 ${isActive(item.path)
-                    ? 'bg-teal-50 text-teal-600'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-teal-600'
+                  ? 'bg-teal-50 text-teal-600'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-teal-600'
                   }`}
               >
                 {item.label}
@@ -116,6 +126,15 @@ const Navigation = () => {
                 {ctaButton}
               </Button>
             </div>
+            <div className="pt-2">
+              <Button
+                onClick={() => goToPage('/login')}
+                className="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-md font-medium transition-colors duration-200"
+              >
+                {logButton}
+              </Button>
+            </div>
+
           </div>
         </div>
       )}

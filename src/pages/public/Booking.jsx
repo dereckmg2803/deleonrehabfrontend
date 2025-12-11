@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from '../../components/ui/button';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { useToast } from '../../hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
 
 const Booking = () => {
@@ -141,13 +141,12 @@ const Booking = () => {
               <React.Fragment key={step.number}>
                 <div className="flex flex-col items-center flex-1">
                   <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${
-                      currentStep > step.number
-                        ? 'bg-teal-600 text-white'
-                        : currentStep === step.number
+                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${currentStep > step.number
+                      ? 'bg-teal-600 text-white'
+                      : currentStep === step.number
                         ? 'bg-teal-600 text-white ring-4 ring-teal-100'
                         : 'bg-gray-200 text-gray-600'
-                    }`}
+                      }`}
                   >
                     {currentStep > step.number ? (
                       <CheckCircle className="w-6 h-6" />
@@ -156,18 +155,16 @@ const Booking = () => {
                     )}
                   </div>
                   <span
-                    className={`mt-2 text-sm font-medium hidden sm:block ${
-                      currentStep >= step.number ? 'text-gray-900' : 'text-gray-500'
-                    }`}
+                    className={`mt-2 text-sm font-medium hidden sm:block ${currentStep >= step.number ? 'text-gray-900' : 'text-gray-500'
+                      }`}
                   >
                     {step.title}
                   </span>
                 </div>
                 {index < steps.length - 1 && (
                   <div
-                    className={`h-1 flex-1 mx-4 transition-all duration-300 ${
-                      currentStep > step.number ? 'bg-teal-600' : 'bg-gray-200'
-                    }`}
+                    className={`h-1 flex-1 mx-4 transition-all duration-300 ${currentStep > step.number ? 'bg-teal-600' : 'bg-gray-200'
+                      }`}
                   />
                 )}
               </React.Fragment>
@@ -195,11 +192,10 @@ const Booking = () => {
                   <button
                     key={service.id}
                     onClick={() => handleServiceSelect(service.id)}
-                    className={`p-6 border-2 rounded-xl text-left transition-all duration-200 hover:border-teal-600 hover:shadow-md ${
-                      selectedService === service.id
-                        ? 'border-teal-600 bg-teal-50 shadow-md'
-                        : 'border-gray-200'
-                    }`}
+                    className={`p-6 border-2 rounded-xl text-left transition-all duration-200 hover:border-teal-600 hover:shadow-md ${selectedService === service.id
+                      ? 'border-teal-600 bg-teal-50 shadow-md'
+                      : 'border-gray-200'
+                      }`}
                   >
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">
                       {service.name}
@@ -239,11 +235,10 @@ const Booking = () => {
                       <button
                         key={index}
                         onClick={() => handleDateSelect(date)}
-                        className={`p-3 border-2 rounded-lg text-center transition-all duration-200 hover:border-teal-600 ${
-                          isSelected
-                            ? 'border-teal-600 bg-teal-50 shadow-md'
-                            : 'border-gray-200'
-                        }`}
+                        className={`p-3 border-2 rounded-lg text-center transition-all duration-200 hover:border-teal-600 ${isSelected
+                          ? 'border-teal-600 bg-teal-50 shadow-md'
+                          : 'border-gray-200'
+                          }`}
                       >
                         <div className="text-xs text-gray-600 mb-1">
                           {date.toLocaleDateString('en-US', { weekday: 'short' })}
@@ -277,13 +272,12 @@ const Booking = () => {
                           key={time}
                           onClick={() => isAvailable && handleTimeSelect(time)}
                           disabled={!isAvailable}
-                          className={`p-3 border-2 rounded-lg text-center font-medium transition-all duration-200 ${
-                            !isAvailable
-                              ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
-                              : isSelected
+                          className={`p-3 border-2 rounded-lg text-center font-medium transition-all duration-200 ${!isAvailable
+                            ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
+                            : isSelected
                               ? 'border-teal-600 bg-teal-600 text-white shadow-md'
                               : 'border-gray-200 hover:border-teal-600'
-                          }`}
+                            }`}
                         >
                           {time}
                         </button>
@@ -436,7 +430,7 @@ const Booking = () => {
             ) : (
               <div />
             )}
-            
+
             {currentStep < 3 ? (
               <Button
                 onClick={nextStep}
