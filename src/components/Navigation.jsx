@@ -29,7 +29,7 @@ const Navigation = () => {
   const menuItems = [
     { label: 'Home', path: '/', scrollToTop: true },
     { label: 'About', path: '/about', scrollToTop: true },
-    { label: 'Blog', path: '/blog', scrollToTop: true },
+    { label: 'Careers', path: '/careers', scrollToTop: true },
     { label: 'Contact', path: '/contact', scrollToTop: true }
   ];
 

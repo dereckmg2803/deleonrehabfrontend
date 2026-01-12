@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/public/Home';
 import About from './pages/public/About';
-import Blog from './pages/public/Blog';
+import Careers from './pages/public/Careers';
 import Contact from './pages/public/Contact';
 import Booking from './pages/public/Booking';
 import Login from './pages/public/auth/Login';
@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/login" element={<Login />} />
@@ -37,12 +37,13 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
-
+      {!hideLayout && <Footer />}
 
       <Toaster />
     </div>
   );
 }
+
 
 function AppWrapper() {
   return (
